@@ -1,4 +1,5 @@
-@canany('viewAny', Spatie\Permission\Models\Role::class, 'viewAny', Spatie\Permission\Models\Permission::class)
+@canany(['view roles', 'view own roles', 'view permissions', 'view own permissions'])
+
     <h3 class="flex items-center font-normal text-white mb-6 text-base no-underline">
         <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="var(--sidebar-icon)"
@@ -33,7 +34,7 @@
                     {{ __('Permissions') }}
                 </router-link>
             </li>
-
         @endcan
     </ul>
-    @endcanany
+
+@endcanany
