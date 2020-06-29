@@ -42,6 +42,13 @@ class Permission extends Resource
      * @var string
      */
     public static $title = 'name';
+	
+	/**
+	 * Indicates if the resource should be globally searchable.
+	 *
+	 * @var bool
+	 */
+	public static $globallySearchable = false;
 
     /**
      * Get the actions available for the resource.
