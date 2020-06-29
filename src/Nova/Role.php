@@ -42,6 +42,13 @@ class Role extends Resource
      * @var string
      */
     public static $title = 'name';
+	
+	/**
+	 * Indicates if the resource should be globally searchable.
+	 *
+	 * @var bool
+	 */
+	public static $globallySearchable = false;
 
     /**
      * Get the actions available for the resource.
@@ -106,7 +113,7 @@ class Role extends Resource
             })->groupBy('group')->toArray())
             ,
             Text::make(__('Users'), function () {
-                return count($this->users);
+	            return $this->users()->count();
             })->exceptOnForms(),
             MorphToMany::make($userResource::label(), 'users', $userResource)->searchable(),
         ];
